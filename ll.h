@@ -88,7 +88,7 @@ int deletes( LLPtr *sPtr, int value )
    if ( value == ( *sPtr )->data ) {
       tempPtr = *sPtr; // hold onto node being removed
       *sPtr = ( *sPtr )->nextPtr; // de-thread the node
-     if(*sPtr)(*sPtr)->pPtr=NULL;
+     if(*sPtr) (*sPtr)->pPtr=NULL;
       free( tempPtr ); // free the de-threaded node
       return value;
    } // end if
@@ -147,7 +147,9 @@ void printList( LLPtr currentPtr )
  void printListR( LLPtr currentPtr )
 {
   //หาตำแหน่งสุดท้าย
-  
+   if ( isEmpty( currentPtr ) ) {
+        return; // Do nothing if empty
+    }
       // move currentPtr to last node
       while(currentPtr->nextPtr!=NULL){
          currentPtr=currentPtr->nextPtr;
