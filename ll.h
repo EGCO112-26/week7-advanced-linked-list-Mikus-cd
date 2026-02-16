@@ -129,7 +129,7 @@ void printList( LLPtr currentPtr )
       puts( "List is empty.\n" );
    } // end if
    else {
-      puts( "The list is:" );
+      
 
       // while not the end of the list
       while ( currentPtr->nextPtr!= NULL ) {
